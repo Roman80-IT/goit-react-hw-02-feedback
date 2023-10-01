@@ -1,11 +1,13 @@
+const { Wrapper, Btn } = require('./FeedbackOptions.styled');
+
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <Wrapper>
       {options.map(option => (
-        <button key={option} onClick={() => onLeaveFeedback(option)}>
+        <Btn key={option} name={option} onClick={() => onLeaveFeedback(option)}>
           {option}
-        </button>
+        </Btn>
       ))}
-    </div>
+    </Wrapper>
   );
 };

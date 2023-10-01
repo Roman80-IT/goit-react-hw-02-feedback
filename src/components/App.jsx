@@ -4,6 +4,8 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 
+import { Wrapper } from './App.styled';
+
 export class App extends Component {
   state = {
     good: 0,
@@ -36,7 +38,7 @@ export class App extends Component {
     const options = Object.keys(this.state);
 
     return (
-      <div>
+      <Wrapper>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={options}
@@ -57,7 +59,7 @@ export class App extends Component {
             />
           )}
         </Section>
-      </div>
+      </Wrapper>
     );
   }
 }

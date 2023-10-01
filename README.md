@@ -64,10 +64,47 @@ state = {
 
 https://cdnjs.com/libraries/modern-normalize
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+```html
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+  integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+```
 
 вставимо код в **index.html**
 
 ## Встановимо Styled Components:
 
 `npm install styled-components`
+
+# Настанови ментора:
+
+- Основний стейт повинен бути в **`Арр`**:
+
+```jsx
+state = {
+  good: 0,
+  netural: 0,
+  bad: 0,
+};
+```
+
+- Метод для збільшення відгуків повинен бути ОДИН, використовувати попереднє
+  значення стейту і основуватися на роботі з об'єктами
+
+```jsx
+this.setState(prevState => {
+  return {
+    [option]: prevState[option] + 1,
+  };
+});
+```
+
+- Компонент **FeedbackOptions** обов'язково повинен отримувати два props:
+  `options={} onLeaveFeedback={}`. `options` це массив ключів iз `state`
+- В компоненті **FeedbackOptions** обов'язково використовуйте метод `map` для
+  створення розмітки При першому відкритті сторінки, коли немає ще відгуків,
+  повідомлення `"There is no feedback"` потрібно рендерити по умові в **Арр**.

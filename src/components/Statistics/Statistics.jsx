@@ -1,3 +1,5 @@
+import { Wrapper } from './Statistics.styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -6,13 +8,13 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <div>
+    <Wrapper>
       {/* <h2>Statistics</h2> */}
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total feedback: {total}</p>
-      <p>Positive feedback: {positivePercentage.toFixed(2)}%</p>
-    </div>
+      <li>Good: {good}</li>
+      <li>Neutral: {neutral}</li>
+      <li>Bad: {bad}</li>
+      <li>Total feedback: {total}</li>
+      <li>Positive feedback: {positivePercentage.toFixed(2)}%</li>
+    </Wrapper>
   );
 };
